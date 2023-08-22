@@ -1,0 +1,16 @@
+CRUD OPERATIONS:
+
+C=> Create, R=> Read, U-> Update, D-> Delete
+
+Entity Class => Class that interacts with database.
+                //Employee and Employee Depart
+
+
+HQL => hibernate query language
+
+HIBERNATE
+//Embeddable objects ? => next class
+//Associations & Relationships
+
+//Transaction, concurrency
+//spring integeration

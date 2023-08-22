@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.my.entities.EmployeeDepart" table="employee_depart">
+        <id name="id">
+            <generator class="identity"></generator>
+        </id>
+        <property name="department"></property>
+    </class>
+</hibernate-mapping>
+
+<!--Student-->
+<!--Course-->
+
+<!--Student-course=> a student can choose 1 course, but a course will have multiple students.-->
