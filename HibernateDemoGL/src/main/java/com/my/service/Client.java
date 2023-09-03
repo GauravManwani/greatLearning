@@ -25,10 +25,9 @@ public class Client {
 
         session.beginTransaction();
 
-        Query query =session.createSQLQuery("SELECT s FROM Student s WHERE s.rollNo > :rn")
+        Query query =session.createQuery("SELECT s FROM Student s WHERE s.rollNo > :rn")
                 .setParameter("rn",13);
         List<Student> students=query.getResultList();
-
 
 
 //        sessionFactory.close();

@@ -14,3 +14,154 @@ HIBERNATE
 
 //Transaction, concurrency
 //spring integeration
+
+
+// EHCache => in memory /disc
+// OSCache => memory, disc , expiration policy(10 minutes),
+                    10L => 10L DB request
+                    1request => 1sql query
+                    2nd-1L => No Sql Query => fetch from cache
+                    1L- 10L => fetch from cache
+
+
+             <=Spring(basics)=>
+
+
+           Intro
+           Configuration
+            XML
+            Class
+           Mapping=> one to one, many to one, many to many
+           Annotations => @Entity , @Id,
+           CRUD Operations
+           Transactions
+           Isolation levels
+           ACID
+           CACHE
+
+           <<=====Spring BASICS======>>
+           SPRING
+           IoC => inversion of control
+           Dependency Injection
+           AOP
+           Spring Modules
+           Spring boot
+           Spring MVC
+           Integration => with any ORM tool
+           Testing
+
+
+
+Introduction to Spring => Set of code built on JAVA.
+
+class A{
+   A(Student s){
+   }
+}
+
+class B{
+    B(Student s){
+    }
+}
+
+IOC=> Inversion of control
+
+lifecycle=>
+
+CREATE => new
+Initiliaze
+USE => CODE  // developers
+REMOVING => GC
+
+
+obj p;
+
+A{
+    A(obj p){
+    }
+
+    // 2 lines
+}
+
+B{
+    B(p)
+
+    // 7 lines
+}
+
+C{
+
+    C(p){
+    }
+    // 10 lines
+}
+
+IoC =>
+1. IoC container manages creation and lifecycle of application components(Objects or Beans).
+    Objects in  java and managed by spring IoC are called Beans.
+
+    Initiate an object => Spring => memory leaks => Object is still in code , but not in use and utilizing memory.
+
+    Create business logic
+    Run
+    Test
+    Deploy
+
+    Two packages =>1. org.springframework.beans
+                   2. org.springframework.context
+
+2. Dependency Injection => (Part/ subset of IoC)
+    reduce the coupling between the components of application.
+       injecting the dependencies to a class rather than a class creating its own dependency.
+
+3. AOP => Aspect Oriented Programming
+=> Transactions => multiple components
+=> Logging      => multiple components
+=> Security     => multiple components
+=> Validations  =>
+
+AOP allows developers to modularize the code. it can reusable.
+
+4. Spring modules=>
+        a. Spring core module => IoC container => bean factory and application context
+        b. Spring Data Access/Integration => to connection with JDBC
+        c. Spring security => logging , authentication and Auth
+       many more.
+
+5. Spring boot (API)=> extension of Spring . It is more advance version that provides auto configurations and
+                    reduce setup.
+
+6. Spring MVC (WEB)=> Spring Model view controller use to build web application. MEAN/ MERN
+
+7. Integration => hibernate, external logging tool etc etc
+
+8. Testing => Junit Test cases to write Unit test cases.
+
+
+
+
+
+ hibernate => jdbc => Database(Mysql)
+
+
+Create Database session => LocalSessionFactoryBean
+    => Db connection => DriverManagerDataSource
+
+
+if(Db Connection ==true){
+start DbSession; // LocalSessionFactoryBean
+}
+
+
+1. HibernateTemplate => Hibernate
+2. EntityManager => JPA
+
+
+
+
+
+
+
+
+
+
