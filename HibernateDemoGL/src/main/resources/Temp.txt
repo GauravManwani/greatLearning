@@ -154,12 +154,14 @@ start DbSession; // LocalSessionFactoryBean
 
 
 1. HibernateTemplate => Hibernate
-2. EntityManager => JPA
 
+EntityManager => JPA
 application.properties
 Configuration using classes.
 Autowiring
 Bean scopes
+annotation based configurations
+mapping, ComponentScan
 
 
 
