@@ -164,10 +164,131 @@ annotation based configurations
 mapping, ComponentScan
 
 
+Bean scopes:
+1. singleton => single instance per Spring IOC container(context) [default]
+2. Prototype => single bean with many instances
+3. request => http request
+4. session => http request
+5. global-session => http request
+
+next session
+
+application.properties
+Configuration using classes.
+annotation based configurations
+Spring jdbc
+Spring DAO
+
+spring AOP
+spring MVC
+springboot
+
+
+Bean Scopes:
+
+1. Singleton (default): for one application context , a single bean
+2. Prototype: new instance per request from context
+3. request: Web application. New bean / request
+4. session: New bean / request : HTTP based,: 1 bean per session
+5. Application (global-session): single bean across all users and sessions.
+                1. created when application is started and destroyed when app is shut down.
+                    Logging.
+
+Issues with xml approach:
+1. lack of understanding.
+2. difficulty in Bean scanning and detection.
+3. naming conflicts.
+4. @Component=> basic implement.
+
+
+API => application programming interface.
+        // self powered code, supporting any client.
+
+      1. Exposed End point. (get, save) => class => Bean , HTTP calls, dependent HTTP session.
+
+
+xml => configurations => @Configuration
+
+@Qualifier => to avoid ambi
+@Autowired => Dependency Injection
+
+Dependency Injection =>
+
+Spring Core module is responsible for dependency Injection.
+    1. Constructor
+    2. Setter
+
+Ways to create Bean:
+    1. Annotation =>
+                    @Bean
+                    @Component
+
+    2. Xml Configurations =>
+                    <bean id="" class=""/>
+
+Autowiring =>
+
+1. No =>
+2. byName => using setter method.
+3. byType => Setter method by type of bean.
+4. Constructer =>
+5. autoDetect => contructor and byType
+
+
+Spring JBDC
+=> application.properties
+=> connection to DB
+
+Difference btw @Controller and @RestController
+1. @RestController = @Controller and @ResponseBody
+2. We can return view in @Controller, but in @RestController only Response bodies(XML based or JSON based)
+
+
+Repository=> interface extending JPARepository or CRUDRepository
+DAO => Data Access Object
+
+Ways to define a bean=>
+@Bean, @Component, @Controller, @Repository, @Service
+
+@Configurations => 1. used for java - based app configurations.
+                    2. @Configuration classes will be initialized first.
+
+Dependency Injection:
+1. passing object in constructor
+2. @Autowired
+3. @Value to inject properties
+
+AOP =>
+[Logging]
+Aspect => is a module that encapsulates a concern(logging, transactions etc etc)
+Join Points => Join points are defined in terms of execution points in code. Eg: method invocation
+                , field access, exception handling
+ [@Log => className, message, type]
+
+Advice => it is an actual action => code.
+                before a method, after a method and around a method.
+
+                Target Method => actual code.
+
+                1. Before Advice => Executes before the target method is called.
+                2. After Returning Advice => Executes after the target method is completed successfully.
+                3. After Throwing Advice => Executes if the target method throws Exception.
+                4. After (Finally) Advice => Executes regardless of the outcome of target method.
+                5. Around Advice => allows you to perform actions both before and after the method invocation.
 
 
 
+1. Spring AOP, AspectJ
 
 
+AOP =>
 
+Join Point
+Advice
+Target Method
+Weaving => Applying aspects(Annotation) to a target object(method, class etc).
+        a. Compile Time Weaving: occurs during compilation of code => AspectJ
+        b. Load time weaving: while loading classes to JVM
+        c. Runtime: while runtime of code=> Spring AOP
 
+PointCut => Group of join points where you advice should be executed. using expression.

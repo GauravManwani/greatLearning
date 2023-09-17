@@ -1,5 +1,7 @@
 package com.my.entities;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
+
 import javax.persistence.*;
 
 @Entity

@@ -7,3 +7,271 @@ Entity Class => Class that interacts with database.
 
 
 HQL => hibernate query language
+
+HIBERNATE
+//Embeddable objects ? => next class
+//Associations & Relationships
+
+//Transaction, concurrency
+//spring integeration
+
+
+// EHCache => in memory /disc
+// OSCache => memory, disc , expiration policy(10 minutes),
+                    10L => 10L DB request
+                    1request => 1sql query
+                    2nd-1L => No Sql Query => fetch from cache
+                    1L- 10L => fetch from cache
+
+
+             <=Spring(basics)=>
+
+
+           Intro
+           Configuration
+            XML
+            Class
+           Mapping=> one to one, many to one, many to many
+           Annotations => @Entity , @Id,
+           CRUD Operations
+           Transactions
+           Isolation levels
+           ACID
+           CACHE
+
+           <<=====Spring BASICS======>>
+           SPRING
+           IoC => inversion of control
+           Dependency Injection
+           AOP
+           Spring Modules
+           Spring boot
+           Spring MVC
+           Integration => with any ORM tool
+           Testing
+
+
+
+Introduction to Spring => Set of code built on JAVA.
+
+class A{
+   A(Student s){
+   }
+}
+
+class B{
+    B(Student s){
+    }
+}
+
+IOC=> Inversion of control
+
+lifecycle=>
+
+CREATE => new
+Initiliaze
+USE => CODE  // developers
+REMOVING => GC
+
+
+obj p;
+
+A{
+    A(obj p){
+    }
+
+    // 2 lines
+}
+
+B{
+    B(p)
+
+    // 7 lines
+}
+
+C{
+
+    C(p){
+    }
+    // 10 lines
+}
+
+IoC =>
+1. IoC container manages creation and lifecycle of application components(Objects or Beans).
+    Objects in  java and managed by spring IoC are called Beans.
+
+    Initiate an object => Spring => memory leaks => Object is still in code , but not in use and utilizing memory.
+
+    Create business logic
+    Run
+    Test
+    Deploy
+
+    Two packages =>1. org.springframework.beans
+                   2. org.springframework.context
+
+2. Dependency Injection => (Part/ subset of IoC)
+    reduce the coupling between the components of application.
+       injecting the dependencies to a class rather than a class creating its own dependency.
+
+3. AOP => Aspect Oriented Programming
+=> Transactions => multiple components
+=> Logging      => multiple components
+=> Security     => multiple components
+=> Validations  =>
+
+AOP allows developers to modularize the code. it can reusable.
+
+4. Spring modules=>
+        a. Spring core module => IoC container => bean factory and application context
+        b. Spring Data Access/Integration => to connection with JDBC
+        c. Spring security => logging , authentication and Auth
+       many more.
+
+5. Spring boot (API)=> extension of Spring . It is more advance version that provides auto configurations and
+                    reduce setup.
+
+6. Spring MVC (WEB)=> Spring Model view controller use to build web application. MEAN/ MERN
+
+7. Integration => hibernate, external logging tool etc etc
+
+8. Testing => Junit Test cases to write Unit test cases.
+
+
+
+
+
+ hibernate => jdbc => Database(Mysql)
+
+
+Create Database session => LocalSessionFactoryBean
+    => Db connection => DriverManagerDataSource
+
+
+if(Db Connection ==true){
+start DbSession; // LocalSessionFactoryBean
+}
+
+
+1. HibernateTemplate => Hibernate
+
+EntityManager => JPA
+application.properties
+Configuration using classes.
+Autowiring
+Bean scopes
+annotation based configurations
+mapping, ComponentScan
+
+
+Bean scopes:
+1. singleton => single instance per Spring IOC container(context) [default]
+2. Prototype => single bean with many instances
+3. request => http request
+4. session => http request
+5. global-session => http request
+
+next session
+
+application.properties
+Configuration using classes.
+annotation based configurations
+Spring jdbc
+Spring DAO
+
+spring AOP
+spring MVC
+springboot
+
+
+Bean Scopes:
+
+1. Singleton (default): for one application context , a single bean
+2. Prototype: new instance per request from context
+3. request: Web application. New bean / request
+4. session: New bean / request : HTTP based,: 1 bean per session
+5. Application (global-session): single bean across all users and sessions.
+                1. created when application is started and destroyed when app is shut down.
+                    Logging.
+
+Issues with xml approach:
+1. lack of understanding.
+2. difficulty in Bean scanning and detection.
+3. naming conflicts.
+4. @Component=> basic implement.
+
+
+API => application programming interface.
+        // self powered code, supporting any client.
+
+      1. Exposed End point. (get, save) => class => Bean , HTTP calls, dependent HTTP session.
+
+
+xml => configurations => @Configuration
+
+@Qualifier => to avoid ambi
+@Autowired => Dependency Injection
+
+Dependency Injection =>
+
+Spring Core module is responsible for dependency Injection.
+    1. Constructor
+    2. Setter
+
+Ways to create Bean:
+    1. Annotation =>
+                    @Bean
+                    @Component
+
+    2. Xml Configurations =>
+                    <bean id="" class=""/>
+
+Autowiring =>
+
+1. No =>
+2. byName => using setter method.
+3. byType => Setter method by type of bean.
+4. Constructer =>
+5. autoDetect => contructor and byType
+
+
+Spring JBDC
+=> application.properties
+=> connection to DB
+
+Difference btw @Controller and @RestController
+1. @RestController = @Controller and @ResponseBody
+2. We can return view in @Controller, but in @RestController only Response bodies(XML based or JSON based)
+
+
+Repository=> interface extending JPARepository or CRUDRepository
+DAO => Data Access Object
+
+Ways to define a bean=>
+@Bean, @Component, @Controller, @Repository, @Service
+
+@Configurations => 1. used for java - based app configurations.
+                    2. @Configuration classes will be initialized first.
+
+Dependency Injection:
+1. passing object in constructor
+2. @Autowired
+3. @Value to inject properties
+
+AOP =>
+[Logging]
+Aspect => is a module that encapsulates a concern(logging, transactions etc etc)
+Join Points => Join points are defined in terms of execution points in code. Eg: method invocation
+                , field access, exception handling
+ [@Log => className, message, type]
+
+Advice => it is an actual action => code.
+                before a method, after a method and around a method.
+
+                Target Method => actual code.
+
+                1. Before Advice => Executes before the target method is called.
+                2. After Returning Advice => Executes after the target method is completed successfully.
+                3. After Throwing Advice => Executes if the target method throws Exception.
+                3. After (Finally) Advice => Executes regardless of the outcome of target method.
+                
