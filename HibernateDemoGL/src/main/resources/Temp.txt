@@ -292,3 +292,213 @@ Weaving => Applying aspects(Annotation) to a target object(method, class etc).
         c. Runtime: while runtime of code=> Spring AOP
 
 PointCut => Group of join points where you advice should be executed. using expression.
+
+
+CACHE:
+
+1. for cache, AOP intercept method calls and checks
+whether the result of this method is already present or not.
+
+2. @Cacheable, @CachePut, @CacheEvict, @CacheConfig
+
+3. Spring provides Cache Abstraction layer that allows to integrate different cache providers.
+
+4. Cache Manager: RedisCacheManager, ConcurrentMapCacheManager
+
+5. @CacheEvict
+
+6. Key Generation => key->Value -> String/Integer -> Object
+
+                    "country"->[<LIST>]
+
+                    cache.get("country") => LIST of country.
+
+7. @Cacheable or @CachePut
+
+8. Benefits:
+        1. less response times. save resources.
+
+
+MONITORING:
+
+1. method invocation,
+2. resource usage,
+3. error occurences
+
+
+PROFILING:
+
+1. Logs
+2. Performance Metrix of APIs
+
+
+Spring Security:
+
+X user is sending Request
+
+interceptors =>
+
+Authentication and Authorization
+Access Control
+Security Filters
+
+SPRING MVC:
+Model-View-Controller
+
+used for web application:   MEAN, MERN
+
+Struts
+Spring boot
+
+Django
+
+Laravel
+MEAN Stack:
+    M=> MongoDb(NoSql DB)
+    E=> ExpressJs(Framework for Node.Js)
+    A=> Angular Js(Front End)
+    N=> Node.Js(backend)
+
+MERN Stack:
+    M=> MongoDb(NoSql DB)
+    E=> ExpressJs(Framework for Node.Js)
+    R=> React Js(Front End)
+    N=> Node.Js(backend)
+
+Model:
+java classes/ objects
+data/ POJOs / Java Beans
+Controller is used to populate model.
+return view.
+
+/get/books => {controller => service => POJOs => controller}=> Database => FE(VIEW(DATA + HTML)=> browser)
+
+View:
+responsible for presenting the data from Model to the user.
+JSP, HTML, Thymeleaf
+
+Controller:
+
+1. View -> Controller -> Model
+2. @Controller
+3. return Objects(ModelAndView)
+
+Dispatcher Servlet:(First receives the request)
+1. it is called front controller of a Spring MVC application.
+2. It intercepts the incoming request and serves as entry point
+3. It consults HandlerMapping to determine which controller should handle the particular request.
+
+Handler Mapping:
+1. responsible for mapping URLs to sepcific controller.
+
+View Resolver:
+1. resolves logical view returned by controller to actual view implementation.
+2. can be configured in Spring configuration file
+
+Interceptor:
+1. performs operation before and after the actualrequest processing.
+2. It is useful for authentication, logging, or modifying request/responses.
+
+Forms Handler:
+data binding to forms using spring Spring MVC
+
+Validations:
+@Valid, @ModelAttribute
+
+Internalization and localization
+multiple regions, languages
+
+Exception handling:
+@ExceptionHandler
+
+
+Architecture:
+
+Presentation:
+Controller
+View
+
+Business Logic:
+Service Classes
+
+Data Access:
+Repositories
+
+Versioning:
+GIT
+versioning of APIs
+
+
+Sessions:
+
+managing user sessions => maintain state of the user.
+login =>  create, Delete, get, store information related user(tokens, phoneNumber etc)
+logout => browse the products .
+
+HTTP CALLS => sharing data over network(WEB) using protocols
+HTTP protocols => GET(READ), POST(SAVE), PUT/PATCH(EDIT), DELETE
+
+METHOD=>GET(READ), POST(SAVE), PUT/PATCH(EDIT), DELETE
+REQUEST BODY
+RESPONSE BODY
+REQUEST PARAM
+URL PARAM
+HEADERS
+
+user A => POST(T1), GET(T2)
+
+stateless
+
+session management
+
+session objects => unique key => sessionId
+
+userA[2hours] => sessionA[2hours] => sessionId
+
+HTTPSession
+
+Spring Session
+
+Custom Session Management
+
+Cookie => login details[authentication Token], user Personalizations etc etc
+
+
+HTTP Sessions => cookies for session management
+@SessionAttributes
+
+
+HTTPS(Secure Sockets Layer) => sessionId is encrypted
+
+Session Timeout=> how long a user will stay in our system with doing any activity
+<session-config>
+    <session-timeout>30</session-timeout>
+</session-config>
+
+Session Tracking Modes=>
+    COOKIE=>
+    URL=>
+    SSl => transferring cookies but in encryption mode.
+
+
+Distributed Session=>
+
+server.session.cookie.name= XYZ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
