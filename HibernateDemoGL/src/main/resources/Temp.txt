@@ -486,10 +486,31 @@ Distributed Session=>
 server.session.cookie.name= XYZ
 
 
+HTTP STATUS CODES:
 
+Request GET/POST => Response(200/201)
+indicate the outcome of the request.
 
+1xx => NOT USED
 
+2xx(Successful)
+200 Ok => Request was successfully processed by server and response is received
+201 Created => Request has request to create new resourse
+204 No Content => Request is successful but no data returned in response. DELETE
 
+3xx(Redirection)
+301 Moved Permanently: The requested resource has been permanently moved to new URL.
+302 Found : The requested resource is temporarily moved to new URL.
+
+4xx(Client Side)
+400 Bad Request: request cannot be understood or some missing required parameters.
+401 unauthorized: Authentication is required or the provided credentials are invalid.
+403 Forbidden: server understood the request, but it refuses to fulfill due to authentication or authorization reasons
+404 Not Found: The requested resource could not be found
+
+5xx(Server Error)
+500 Internal Server Error: A generic error message indicating that unexpected error occured.
+503 Service Unavailable: The server is temporaarily unable to handle the request.
 
 
 
