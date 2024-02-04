@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bill Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+<form th:action="@{/billcompany/save}" th:object="${billCompanyDetails}" method="POST">
+
+	<input
+		type="text"
+		name="name"
+		th:field="*{name}"
+		placeholder = "Enter Company name"
+	/>
+	
+	<input
+		type="text"
+		name="pricePerUnit"
+		th:field="*{pricePerUnit}"
+		placeholder = "Enter Price Per Unit"
+	/>
+<button type="submit">Save</button>
+</form>
+</body>
+
+
+
+</html>
